@@ -1,6 +1,9 @@
 # Aug 19, 2023
 # W3 Schools Webpage Example Extractor
 
+import requests
+from bs4 import BeautifulSoup
+
 def remove_tags(html):
 
     # parse html content
