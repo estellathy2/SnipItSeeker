@@ -2,7 +2,7 @@ import json
 import page_reader
 
 def reading_json():
-    with open('numbers.json', 'r') as openfile:
+    with open('examples.json', 'r') as openfile:
         # Reading from json file
         json_object = json.load(openfile)
     print(json_object)
