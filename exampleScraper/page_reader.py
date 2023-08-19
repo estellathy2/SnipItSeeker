@@ -20,13 +20,21 @@ def find_examples(url):
 
     page = requests.get(url)
 
-    print(page.text)
     soup = BeautifulSoup(page.text, 'html.parser')
 
-    output_dict = {}
+    output_list = []
     
     for code_block_div in soup.find_all("div", {"class": "w3-example"}):
-        code = remove_tags(code_block_div.find("div", class_="w3-code notranslate pythonHigh").text) # code block
-        title = remove_tags(code_block_div.find("p").text)[:-1] # Title with removed colon
-        output_dict[title] = code
-    return output_dict
+        code_div = code_block_div.find("div", class_="w3-code notranslate pythonHigh")
+        title_div = code_block_div.find("p")
+        if not (title_div is None):
+            title = remove_tags(title_div.text)[:-1] # Title
+        else:
+            title = "Example"
+        if not (code_div is None):
+            code = remove_tags(code_div.text)
+            output_list.append([title,code])
+
+    return output_list
+
+# print(find_examples("https://www.w3schools.com/python/python_strings.asp"))
