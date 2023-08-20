@@ -13,3 +13,9 @@ def get_all_examples():
     for item in soup.find("div",{"id":"leftmenuinnerinner"}).find_all("a", href=True):
         examples += page_reader.find_examples(f"https://www.w3schools.com/python/{item['href']}")
     return examples
+
+def _print_all_examples():
+    for i in get_all_examples():
+        print(i[0])
+        print(i[1])
+        print("")
