@@ -6,7 +6,7 @@ def code_response(message, history):
     matching_lists = []
     for i in rw_json.reading_json():
         if i and isinstance(i[0], str) and message in i[0]:
-            matching_lists.append(i)
+            matching_lists.append([i[0], f"```py\n{i[1]}\n```"])
 
     output = '\n\n'.join(['\n'.join(item) for item in matching_lists])
     return output
