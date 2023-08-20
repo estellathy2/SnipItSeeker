@@ -1,8 +1,8 @@
 import json
-import page_reader
+import crawler
 
 def reading_json():
-    with open('numbers.json', 'r') as openfile:
+    with open('examples.json', 'r') as openfile:
         # Reading from json file
         json_object = json.load(openfile)
     return(json_object)
@@ -10,4 +10,4 @@ def reading_json():
 def writing_json():
     filename = 'examples.json'
     with open(filename, 'w') as file_object:  #open the file in write mode
-        json.dump(page_reader.find_examples(), file_object)
+        json.dump(crawler.get_all_examples(), file_object)
