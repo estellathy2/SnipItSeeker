@@ -1,3 +1,7 @@
+# page_reader.py
+# Copyright (c) 2023 Estella Tang and Andy Yu
+# This project is licensed under the MIT License. See LICENSE for details.
+
 # Aug 19, 2023
 # W3 Schools Webpage Example Extractor
 
