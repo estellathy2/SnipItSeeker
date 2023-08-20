@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 def remove_tags(html):
 
     # parse html content
-    soup = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(html.replace("<br>","\n"), "html.parser")
  
     for data in soup(['style', 'script']):
         # Remove tags
