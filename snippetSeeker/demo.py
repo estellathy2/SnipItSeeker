@@ -35,7 +35,7 @@ def search_similarity(message):
         for i in rw_json.reading_json():
             if count >= 10:
                 break
-            if i and isinstance(i[0], str) and count_common_words(i[0], message) >= 4:
+            if i and isinstance(i[0], str) and count_common_words(i[0], message) >= 3:
                 matching_lists.append(i)
                 count += 1
     
